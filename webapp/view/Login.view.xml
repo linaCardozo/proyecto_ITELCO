@@ -1,0 +1,49 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.proyectoItelco.controller.Login" xmlns="sap.m" xmlns:layout="sap.ui.commons.layout">
+    <Page showHeader="false" title="Page Title" showFooter="false" showNavButton="false" enableScrolling="false">
+        <content>
+            <layout:AbsoluteLayout horizontalScrolling="Hidden" verticalScrolling="Auto">
+                <layout:positions>
+                    <layout:PositionContainer left="373px" top="34px">
+                        <layout:control>
+                            <VBox alignItems="Center" direction="Column" fitContainer="true" width="559.5625px" height="534px" justifyContent="Center" renderType="Div" visible="true" displayInline="false">
+                                <items>
+                                    <HBox alignItems="Stretch" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false">
+                                        <items>
+                                            <Text text="" width="150px" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                            <Image src="/webapp/resources/descarga__1_.jpg" height="auto" width="50%" visible="true" densityAware="false"/>
+                                        </items>
+                                        <layoutData/>
+                                    </HBox>
+                                    <Label text="" design="Bold" width="185px" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                    <Label text="" design="Bold" width="185px" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                    <Label text="Usuario" design="Bold" width="185px" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                    <FormattedText htmlText="&lt;strong style=&quot;font-size:30px; text-align:left&quot;>Usuario&lt;/strong>" width="auto" visible="false" class="sapUiTinyMargin"/>
+                                    <Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+                                    <Label text="" design="Bold" width="185px" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                    <Label text="Contraseña" design="Bold" width="185px" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                    <FormattedText htmlText="&lt;strong style=&quot;font-size:30px; text-align:left&quot;>Contraseña&lt;/strong>" width="auto" visible="false" class="sapUiTinyMargin"/>
+                                    <Input id="sap_m_Page_0-content-sap_m_VBox-1622223594385-items-sap_m_Input-1622223690911" type="Password" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="true" valueStateText="Invalid entry" maxLength="0"/>
+                                    <Label text="" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                    <Button text="Ingresar" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>
+                                </items>
+                                <layoutData/>
+                            </VBox>
+                        </layout:control>
+                    </layout:PositionContainer>
+                </layout:positions>
+            </layout:AbsoluteLayout>
+        </content>
+        <footer>
+            <OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="false">
+                <content>
+                    <ToolbarSpacer width=""/>
+                    <Button text="Save" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                    <Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                </content>
+            </OverflowToolbar>
+        </footer>
+        <headerContent/>
+        <subHeader/>
+        <customHeader/>
+    </Page>
+</mvc:View>

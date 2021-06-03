@@ -1,0 +1,14 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" controllerName="com.sap.build.standard.proyectoItelco.controller.dialog_1" xmlns="sap.m">
+    <Dialog horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="About" type="Standard" verticalScrolling="true">
+        <content>
+            <Text text="Use this application to capture items related to safety : incidents, maintenance, or just observations." width="auto" maxLines="4" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+        </content>
+        <beginButton/>
+        <buttons>
+            <Button text="OK" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>
+        </buttons>
+        <customHeader/>
+        <endButton/>
+        <subHeader/>
+    </Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,22 @@
+{
+    "dataBinding": {
+        "/webapp/view/Login.view.xml": {
+            "entitySet": ""
+        }, 
+        "/webapp/view/list.view.xml": {
+            "entitySet": ""
+        }, 
+        "/webapp/view/item_details.view.xml": {
+            "entitySet": "/SafetyItemSet"
+        }, 
+        "/webapp/view/item_edition.view.xml": {
+            "entitySet": "/SafetyItemSet"
+        }, 
+        "/webapp/view/item_creation.view.xml": {
+            "entitySet": "/SafetyItemSet"
+        }, 
+        "/webapp/view/dialog_1.view.xml": {
+            "entitySet": ""
+        } 
+    }
+}

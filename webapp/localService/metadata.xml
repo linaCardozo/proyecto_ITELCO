@@ -1,0 +1,82 @@
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="f488f607da574cff1570213c" xml:lang="en" sap:schema-version="0000" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityContainer Name="f488f607da574cff1570213c_Entities" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="SafetyItemSet" EntityType="f488f607da574cff1570213c.SafetyItem" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <AssociationSet Name="SafetyItemAttachmentAttachment" Association="f488f607da574cff1570213c.SafetyItemAttachmentAttachment" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="SafetyItemSet" Role="FromRole_SafetyItemAttachmentAttachment"/>
+                    <End EntitySet="AttachmentSet" Role="ToRole_SafetyItemAttachmentAttachment"/>
+                </AssociationSet>
+                <EntitySet Name="AttachmentSet" EntityType="f488f607da574cff1570213c.Attachment" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <EntitySet Name="SiteSet" EntityType="f488f607da574cff1570213c.Site" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <EntitySet Name="IncidentTypeSet" EntityType="f488f607da574cff1570213c.IncidentType" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <EntitySet Name="StatusValueSet" EntityType="f488f607da574cff1570213c.StatusValue" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <EntitySet Name="StatusEntregaSet" EntityType="f488f607da574cff1570213c.StatusEntrega" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+            </EntityContainer>
+            <EntityType Name="SafetyItem">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="Type" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Type"/>
+                <Property Name="Description" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Description"/>
+                <Property Name="Comment" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Comment"/>
+                <Property Name="CreationDate" Type="Edm.DateTime" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:display-format="Date" sap:label="CreationDate"/>
+                <Property Name="AssignedTo" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="AssignedTo"/>
+                <Property Name="Site" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Site"/>
+                <Property Name="Status" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Status"/>
+                <Property Name="TypeIcon" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:calculated="{&quot;calculation&quot;:&quot;[{\&quot;label\&quot;:\&quot;IF\&quot;,\&quot;name\&quot;:\&quot;if\&quot;,\&quot;type\&quot;:\&quot;condition\&quot;,\&quot;condition\&quot;:[{\&quot;label\&quot;:\&quot;=\&quot;,\&quot;name\&quot;:\&quot;equals\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;SafetyItem\&quot;,\&quot;entityId\&quot;:\&quot;SafetyItem\&quot;,\&quot;navPropName\&quot;:\&quot;\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropMultiplicity\&quot;:null,\&quot;navPropOp\&quot;:null,\&quot;propertyName\&quot;:\&quot;Type\&quot;,\&quot;propertyId\&quot;:\&quot;Type\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;propertyType\&quot;:\&quot;String\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:1,\&quot;computedType\&quot;:\&quot;string\&quot;}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot;Incident\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:3,\&quot;computedType\&quot;:\&quot;string\&quot;}],\&quot;displayLabel\&quot;:\&quot;=\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:2,\&quot;computedType\&quot;:\&quot;boolean\&quot;}],\&quot;then\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot;sap-icon://alert\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:4,\&quot;computedType\&quot;:\&quot;string\&quot;}],\&quot;else\&quot;:[{\&quot;label\&quot;:\&quot;IF\&quot;,\&quot;name\&quot;:\&quot;if\&quot;,\&quot;type\&quot;:\&quot;condition\&quot;,\&quot;condition\&quot;:[{\&quot;label\&quot;:\&quot;=\&quot;,\&quot;name\&quot;:\&quot;equals\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;SafetyItem\&quot;,\&quot;entityId\&quot;:\&quot;SafetyItem\&quot;,\&quot;navPropName\&quot;:\&quot;\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropMultiplicity\&quot;:null,\&quot;navPropOp\&quot;:null,\&quot;propertyName\&quot;:\&quot;Type\&quot;,\&quot;propertyId\&quot;:\&quot;Type\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;propertyType\&quot;:\&quot;String\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:6,\&quot;computedType\&quot;:\&quot;string\&quot;}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot;Safety Observation\&quot;,\&quot;isNewLine\&quot;:true,\&quot;id\&quot;:8,\&quot;computedType\&quot;:\&quot;string\&quot;}],\&quot;displayLabel\&quot;:\&quot;=\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:7,\&quot;computedType\&quot;:\&quot;boolean\&quot;}],\&quot;then\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot;sap-icon://display\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:9,\&quot;computedType\&quot;:\&quot;string\&quot;}],\&quot;else\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot;sap-icon://appointment\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:10,\&quot;computedType\&quot;:\&quot;string\&quot;}],\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:5,\&quot;computedType\&quot;:\&quot;string\&quot;}],\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:0,\&quot;computedType\&quot;:\&quot;string\&quot;}]&quot;,&quot;inputProperties&quot;:[{&quot;_id&quot;:&quot;58d8eee50b17803cff62c65f&quot;,&quot;propertyId&quot;:&quot;Type&quot;,&quot;entityId&quot;:&quot;SafetyItem&quot;,&quot;navPropId&quot;:&quot;&quot;},{&quot;_id&quot;:&quot;58d8eee50b17803cff62c65e&quot;,&quot;propertyId&quot;:&quot;Type&quot;,&quot;entityId&quot;:&quot;SafetyItem&quot;,&quot;navPropId&quot;:&quot;&quot;}]}" sap:label="TypeIcon"/>
+                <Property Name="Attachcount" Type="Edm.Decimal" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:calculated="{&quot;calculation&quot;:&quot;[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;Attachment\&quot;,\&quot;entityId\&quot;:\&quot;Attachment\&quot;,\&quot;navPropName\&quot;:\&quot;Attachment\&quot;,\&quot;navPropId\&quot;:\&quot;Attachment\&quot;,\&quot;navPropMultiplicity\&quot;:true,\&quot;navPropOp\&quot;:\&quot;count\&quot;,\&quot;propertyName\&quot;:\&quot;ID\&quot;,\&quot;propertyId\&quot;:\&quot;ID\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;propertyType\&quot;:\&quot;String\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:0,\&quot;computedType\&quot;:\&quot;number\&quot;}]&quot;,&quot;inputProperties&quot;:[{&quot;_id&quot;:&quot;58de4e088be69134adb9b68d&quot;,&quot;propertyId&quot;:&quot;ID&quot;,&quot;entityId&quot;:&quot;Attachment&quot;,&quot;navPropId&quot;:&quot;Attachment&quot;}]}" sap:label="Attachcount"/>
+                <Property Name="StatusEntrega" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="StatusEntrega"/>
+                <NavigationProperty Name="Attachment" Relationship="f488f607da574cff1570213c.SafetyItemAttachmentAttachment" FromRole="FromRole_SafetyItemAttachmentAttachment" ToRole="ToRole_SafetyItemAttachmentAttachment"/>
+            </EntityType>
+            <Association Name="SafetyItemAttachmentAttachment">
+                <End Type="f488f607da574cff1570213c.SafetyItem" Multiplicity="1" Role="FromRole_SafetyItemAttachmentAttachment"/>
+                <End Type="f488f607da574cff1570213c.Attachment" Multiplicity="*" Role="ToRole_SafetyItemAttachmentAttachment"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_SafetyItemAttachmentAttachment">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="ToRole_SafetyItemAttachmentAttachment">
+                        <PropertyRef Name="___FK_46d9828fe49299e50d9bb2ee"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityType Name="Attachment">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="___FK_46d9828fe49299e50d9bb2ee" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_46d9828fe49299e50d9bb2ee"/>
+                <Property Name="Image" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Image"/>
+                <Property Name="filename" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Name"/>
+            </EntityType>
+            <EntityType Name="Site">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="Description" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Description"/>
+            </EntityType>
+            <EntityType Name="IncidentType">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="Description" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Description"/>
+            </EntityType>
+            <EntityType Name="StatusValue">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+            </EntityType>
+            <EntityType Name="StatusEntrega">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+            </EntityType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

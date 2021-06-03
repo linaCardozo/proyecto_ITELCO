@@ -1,0 +1,118 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.proyectoItelco.controller.item_edition" xmlns:uxap="sap.uxap" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns="sap.m">
+    <uxap:ObjectPageLayout showTitleInHeaderContent="false" showHeaderContent="true" showAnchorBar="true" showFooter="true" subSectionLayout="TitleOnTop">
+        <uxap:headerContent/>
+        <uxap:headerTitle>
+            <uxap:ObjectPageHeader objectImageURI="" objectTitle="{Type}" objectSubtitle="{ID}" headerDesign="Light" objectImageShape="Square" isObjectIconAlwaysVisible="false" isObjectTitleAlwaysVisible="true" isObjectSubtitleAlwaysVisible="true" isActionAreaAlwaysVisible="true">
+                <uxap:actions/>
+                <uxap:breadCrumbsLinks/>
+                <uxap:navigationBar/>
+            </uxap:ObjectPageHeader>
+        </uxap:headerTitle>
+        <uxap:sections>
+            <uxap:ObjectPageSection showTitle="true" title="Page Section Title" titleUppercase="true" visible="true">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Información General" mode="Expanded">
+                        <uxap:blocks>
+                            <form:Form width="100%" editable="true" visible="true">
+                                <form:title>
+                                    <core:Title text="Información General" level="Auto"/>
+                                </form:title>
+                                <form:formContainers>
+                                    <form:FormContainer visible="true">
+                                        <form:formElements>
+                                            <form:FormElement visible="true">
+                                                <form:label>
+                                                    <Label text="Nombre" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                                </form:label>
+                                                <form:fields>
+                                                    <Input value="{Type}" type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement visible="true">
+                                                <form:label>
+                                                    <Label text="Descripción" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                                </form:label>
+                                                <form:fields>
+                                                    <Input value="{Description}" type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement visible="true">
+                                                <form:label>
+                                                    <Label text="Fecha de observación" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                                </form:label>
+                                                <form:fields>
+                                                    <DatePicker value="{path: 'CreationDate', type: 'sap.ui.model.type.Date', formatOptions: { UTC: true, style: 'medium' }}" width="auto" displayFormat="medium" required="false" valueStateText="Invalid entry" enabled="true" visible="true" valueFormat="yyyyMMdd"/>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement visible="true">
+                                                <form:label>
+                                                    <Label text="Asignado a" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                                </form:label>
+                                                <form:fields>
+                                                    <Input value="{AssignedTo}" type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement visible="true">
+                                                <form:label>
+                                                    <Label text="Estado" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                                </form:label>
+                                                <form:fields>
+                                                    <ComboBox selectedKey="{Status}" editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%" items="{path:'/StatusValueSet', templateShareable:true}">
+                                                        <items>
+                                                            <core:Item text="{ID}" enabled="true" key="{ID}"/>
+                                                        </items>
+                                                    </ComboBox>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement visible="true">
+                                                <form:label>
+                                                    <Label text="Comentarios" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                                </form:label>
+                                                <form:fields>
+                                                    <TextArea value="{Comment}" rows="4" cols="20" maxLength="0" wrapping="Soft" enabled="true" required="false" valueStateText="Invalid entry" visible="true"/>
+                                                </form:fields>
+                                            </form:FormElement>
+                                        </form:formElements>
+                                        <form:title/>
+                                    </form:FormContainer>
+                                </form:formContainers>
+                                <form:layout>
+                                    <form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+                                </form:layout>
+                            </form:Form>
+                        </uxap:blocks>
+                        <uxap:moreBlocks/>
+                        <uxap:actions/>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+                <uxap:customAnchorBarButton/>
+            </uxap:ObjectPageSection>
+            <uxap:ObjectPageSection showTitle="true" title="Page Section Title" titleUppercase="true" visible="true">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Archivos adjuntos" mode="Expanded">
+                        <uxap:blocks>
+                            <UploadCollection uploadEnabled="false" numberOfAttachmentsText="Seleccione archivos adjuntos" showSeparators="All" noDataText="The UploadCollection coming from BUILD cannot work in WebIDE without additional work" visible="true" maximumFileSize="10" mimeType="image/jpeg,image/gif,image/png,text/plain,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.openxmlformats-officedocument.presentationml.presentation,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" multiple="false" uploadUrl="" sameFilenameAllowed="false" mode="SingleSelectMaster" uploadComplete="_onUploadCollectionUploadComplete" change="_onUploadCollectionChange" typeMissmatch="_onUploadCollectionTypeMissmatch" fileSizeExceed="_onUploadCollectionFileSizeExceed">
+                                <headerParameters/>
+                                <items/>
+                                <parameters/>
+                                <toolbar/>
+                            </UploadCollection>
+                        </uxap:blocks>
+                        <uxap:moreBlocks/>
+                        <uxap:actions/>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+                <uxap:customAnchorBarButton/>
+            </uxap:ObjectPageSection>
+        </uxap:sections>
+        <uxap:footer>
+            <OverflowToolbar width="100%" height="auto" design="Auto" enabled="true" visible="true">
+                <content>
+                    <ToolbarSpacer width=""/>
+                    <Button text="Guardar" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>
+                    <Button text="Cancelar" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress1"/>
+                </content>
+            </OverflowToolbar>
+        </uxap:footer>
+    </uxap:ObjectPageLayout>
+</mvc:View>

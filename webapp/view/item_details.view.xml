@@ -1,0 +1,94 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.proyectoItelco.controller.item_details" xmlns:uxap="sap.uxap" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form">
+    <uxap:ObjectPageLayout showTitleInHeaderContent="false" showHeaderContent="true" showAnchorBar="true" showFooter="false" subSectionLayout="TitleOnTop">
+        <uxap:headerContent>
+            <core:Icon src="sap-icon://competitor" size="48px" height="48px" width="48px" visible="true"/>
+            <ObjectStatus title="Estado" text="{Status}" state="None" visible="true"/>
+        </uxap:headerContent>
+        <uxap:headerTitle>
+            <uxap:ObjectPageHeader objectImageURI="/build/uilibraries/content/static/image-canvas.svg" objectTitle="{Type}" objectSubtitle="{ID}" headerDesign="Light" objectImageShape="Square" isObjectIconAlwaysVisible="false" isObjectTitleAlwaysVisible="true" isObjectSubtitleAlwaysVisible="true" isActionAreaAlwaysVisible="true">
+                <uxap:actions>
+                    <Button text="Editar" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>
+                </uxap:actions>
+                <uxap:breadCrumbsLinks/>
+                <uxap:navigationBar>
+                    <Bar design="Auto">
+                        <contentLeft>
+                            <Button text="" type="Back" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress1"/>
+                        </contentLeft>
+                        <contentMiddle>
+                            <Title text="Detalle del Sprint" titleStyle="Auto" width="auto" textAlign="Begin" visible="true" wrapping="false"/>
+                        </contentMiddle>
+                        <contentRight/>
+                    </Bar>
+                </uxap:navigationBar>
+            </uxap:ObjectPageHeader>
+        </uxap:headerTitle>
+        <uxap:sections>
+            <uxap:ObjectPageSection showTitle="true" title="{ID}" titleUppercase="true" visible="true">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Información General" mode="Expanded">
+                        <uxap:blocks>
+                            <form:Form width="100%" editable="true" visible="true">
+                                <form:title/>
+                                <form:formContainers>
+                                    <form:FormContainer visible="true">
+                                        <form:formElements>
+                                            <form:FormElement visible="true">
+                                                <form:label>
+                                                    <Label text="Responsable" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                                </form:label>
+                                                <form:fields>
+                                                    <Text text="{AssignedTo}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement visible="true">
+                                                <form:label>
+                                                    <Label text="Descripción Detallada" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                                </form:label>
+                                                <form:fields>
+                                                    <Text text="{Description}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement visible="true">
+                                                <form:label>
+                                                    <Label text="Comentarios" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                                </form:label>
+                                                <form:fields>
+                                                    <Text text="{Comment}" width="auto" maxLines="5" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                                </form:fields>
+                                            </form:FormElement>
+                                        </form:formElements>
+                                        <form:title/>
+                                    </form:FormContainer>
+                                </form:formContainers>
+                                <form:layout>
+                                    <form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+                                </form:layout>
+                            </form:Form>
+                        </uxap:blocks>
+                        <uxap:moreBlocks/>
+                        <uxap:actions/>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+                <uxap:customAnchorBarButton/>
+            </uxap:ObjectPageSection>
+            <uxap:ObjectPageSection showTitle="true" title="{path: 'Attachcount', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" titleUppercase="true" visible="true">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Entregables" mode="Expanded">
+                        <uxap:blocks>
+                            <Carousel height="auto" width="100%" loop="true" showPageIndicator="true" pageIndicatorPlacement="Auto" visible="true" class="sapUiContentPadding" pages="{path:'Attachment', templateShareable:true}">
+                                <pages>
+                                    <Image src="{Image}" height="auto" width="2000px" visible="true" densityAware="false"/>
+                                </pages>
+                            </Carousel>
+                        </uxap:blocks>
+                        <uxap:moreBlocks/>
+                        <uxap:actions/>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+                <uxap:customAnchorBarButton/>
+            </uxap:ObjectPageSection>
+        </uxap:sections>
+        <uxap:footer/>
+    </uxap:ObjectPageLayout>
+</mvc:View>

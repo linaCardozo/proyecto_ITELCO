@@ -1,0 +1,92 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+    <ViewSettingsDialog>
+        
+        <filterItems>
+            
+            <ViewSettingsFilterItem text="Type" key="Type"
+                                    items="{path: '/Type'}">
+                <items>
+                    <ViewSettingsItem key="String___Type___{}" text="{}"></ViewSettingsItem>
+                </items>
+            </ViewSettingsFilterItem>
+            
+            
+            <ViewSettingsFilterItem text="Description" key="Description"
+                                    items="{path: '/Description'}">
+                <items>
+                    <ViewSettingsItem key="String___Description___{}" text="{}"></ViewSettingsItem>
+                </items>
+            </ViewSettingsFilterItem>
+            
+            
+            <ViewSettingsFilterItem text="Status" key="Status"
+                                    items="{path: '/Status'}">
+                <items>
+                    <ViewSettingsItem key="String___Status___{}" text="{}"></ViewSettingsItem>
+                </items>
+            </ViewSettingsFilterItem>
+            
+            
+            <ViewSettingsCustomItem text="CreationDate"
+                                    filterCount="{parts:[{path:'/CreationDate/vValueLT'}, {path:'/CreationDate/vValueGT'}], formatter:'.filterCountFormatter'}">
+                <customControl>
+                    <l:VerticalLayout width="100%">
+                        <Toolbar>
+                            <Label width="25%" text="Before" class="sapUiSmallMarginBegin"/>
+                            <DatePicker width="33%" value="{path: '/CreationDate/vValueLT'}"
+                                        valueFormat="yyyy-MM-dd" displayFormat="yyyy-MM-dd"/>
+                        </Toolbar>
+                        <Toolbar>
+                            <Label width="25%" text="After" class="sapUiSmallMarginBegin"/>
+                            <DatePicker width="33%" value="{path: '/CreationDate/vValueGT'}"
+                                        valueFormat="yyyy-MM-dd" displayFormat="yyyy-MM-dd"/>
+                        </Toolbar>
+                    </l:VerticalLayout>
+                </customControl>
+            </ViewSettingsCustomItem>
+            
+            
+            <ViewSettingsFilterItem text="StatusEntrega" key="StatusEntrega"
+                                    items="{path: '/StatusEntrega'}">
+                <items>
+                    <ViewSettingsItem key="String___StatusEntrega___{}" text="{}"></ViewSettingsItem>
+                </items>
+            </ViewSettingsFilterItem>
+            
+            
+        </filterItems>
+        
+
+        
+        <sortItems>
+            
+            <ViewSettingsItem text="Type" key="Type"/>
+            
+            <ViewSettingsItem text="Description" key="Description"/>
+            
+            <ViewSettingsItem text="Status" key="Status"/>
+            
+            <ViewSettingsItem text="CreationDate" key="CreationDate"/>
+            
+            <ViewSettingsItem text="StatusEntrega" key="StatusEntrega"/>
+            
+        </sortItems>
+        
+
+        
+        <groupItems>
+            
+            <ViewSettingsItem text="Type" key="Type"/>
+            
+            <ViewSettingsItem text="Description" key="Description"/>
+            
+            <ViewSettingsItem text="Status" key="Status"/>
+            
+            <ViewSettingsItem text="CreationDate" key="CreationDate"/>
+            
+            <ViewSettingsItem text="StatusEntrega" key="StatusEntrega"/>
+            
+        </groupItems>
+        
+    </ViewSettingsDialog>
+</core:FragmentDefinition>

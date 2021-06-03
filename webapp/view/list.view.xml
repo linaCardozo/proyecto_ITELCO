@@ -1,0 +1,83 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.proyectoItelco.controller.list" xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Page showHeader="true" title="Universidad de los Alpes" showFooter="false" showNavButton="false">
+        <content>
+            <IconTabBar expandable="false" expanded="true" applyContentPadding="true" backgroundDesign="Solid" upperCase="false" visible="true" selectedKey="Ok">
+                <items>
+                    <IconTabFilter iconColor="Neutral" text="Sprints" count="" design="Vertical" showAll="false" textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
+                        <content>
+                            <Table id="sap_Worklist_Page_0-content-sap_m_IconTabBar-1490617229785-items-sap_m_IconTabFilter-1-content-build_simple_Table-1490617249198" width="auto" noDataText="No data" mode="MultiSelect" showSeparators="All" growing="false" growingThreshold="20" growingScrollToLoad="false" class="sapUiResponsiveMargin" itemPress="_onTableItemPress" items="{path:'/SafetyItemSet', templateShareable:true}">
+                                <infoToolbar>
+                                    <Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+                                        <content>
+                                            <Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </content>
+                                    </Toolbar>
+                                </infoToolbar>
+                                <headerToolbar>
+                                    <Toolbar width="auto" height="46px" design="Transparent" visible="true" enabled="true">
+                                        <content>
+                                            <ToolbarSpacer width=""/>
+                                            <SearchField placeholder="Buscar" showSearchButton="true" visible="true" width="60%" liveChange="_onSearchFieldLiveChange"/>
+                                            <Button text="" type="Transparent" icon="sap-icon://add" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>
+                                            <Button text="Eliminar" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress1"/>
+                                            <Button text="" type="Transparent" icon="sap-icon://drop-down-list" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress2"/>
+                                            <Button text="" type="Default" icon="/webapp/resources/icon2-removebg-preview.png" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress3"/>
+                                        </content>
+                                    </Toolbar>
+                                </headerToolbar>
+                                <columns>
+                                    <Column width="32px" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">
+                                        <header/>
+                                        <footer/>
+                                    </Column>
+                                    <Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <header>
+                                            <Text text="Nombre" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </header>
+                                        <footer/>
+                                    </Column>
+                                    <Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="WithoutHeader" mergeDuplicates="false">
+                                        <header>
+                                            <Text text="Descripción" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </header>
+                                        <footer/>
+                                    </Column>
+                                    <Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <header>
+                                            <Text text="Estado" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </header>
+                                        <footer/>
+                                    </Column>
+                                    <Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <header>
+                                            <Text text="Fecha Planeada Entrega" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                        </header>
+                                        <footer/>
+                                    </Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem type="Navigation">
+                                        <cells>
+                                            <core:Icon size="24px" height="24px" width="24px" visible="true"/>
+                                            <Text text="{Type}" width="auto" maxLines="2" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                            <Text text="{Description}" width="auto" maxLines="2" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                            <ObjectStatus text="{Status}" state="None" visible="true"/>
+                                            <ObjectStatus title="" text="{path: 'CreationDate', type: 'sap.ui.model.type.Date', formatOptions: { UTC: true, style: 'short' }}" state="{StatusEntrega}" visible="true"/>
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                        </content>
+                    </IconTabFilter>
+                </items>
+                <content/>
+            </IconTabBar>
+        </content>
+        <footer/>
+        <headerContent>
+            <Button text="" type="Default" icon="sap-icon://sys-help" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress4"/>
+        </headerContent>
+        <subHeader/>
+        <customHeader/>
+    </Page>
+</mvc:View>
